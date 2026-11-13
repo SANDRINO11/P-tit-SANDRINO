@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-brand-navy: #0B1730;
+  --color-brand-green: #16A36A;
+  --color-brand-white: #FFFFFF;
+  --color-brand-grey: #F4F6F8;
+  
+  --color-primary: var(--color-brand-navy);
+  --color-secondary: var(--color-brand-green);
+}
+
+@layer base {
+  html,
+  body {
+    @apply font-sans bg-brand-white text-brand-navy antialiased;
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  #root {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, span, a, div {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
